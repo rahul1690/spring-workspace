@@ -1,9 +1,14 @@
 package com.learning.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import jakarta.annotation.Resource;
 
+@Component
 public class Circle implements Shape{
 
 	private Point center;
@@ -18,7 +23,9 @@ public class Circle implements Shape{
 		return center;
 	}
 
-	@Resource
+//	@Resource
+	@Autowired
+	@Qualifier("circle1")
 	public void setCenter(Point center) {
 		this.center = center;
 	}
