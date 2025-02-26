@@ -1,5 +1,7 @@
 package com.learning;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Employee {
 
 	private int id;
@@ -9,6 +11,9 @@ public class Employee {
 		return id;
 	}
 	
+	public Employee() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	
 	public Employee(Address address) {
@@ -30,6 +35,7 @@ public class Employee {
 	public Address getAddress() {
 		return address;
 	}
+	@Autowired
 	public void setAddress(Address address) {
 		this.address = address;
 	}
